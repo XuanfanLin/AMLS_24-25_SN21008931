@@ -142,7 +142,7 @@ print("learning_rate:", best_hps.get('learning_rate'))
 # 5. Build and train the initial model for 30 epochs
 # --------------------------------------------------
 model = tuner.hypermodel.build(best_hps)
-history_20 = model.fit(
+history_30 = model.fit(
     train_images, train_labels, 
     epochs=30,
     validation_data=(val_images, val_labels),
@@ -150,10 +150,10 @@ history_20 = model.fit(
 )
 
 # --- Training & Validation Accuracy and Loss Curves ---
-acc = history_20.history['accuracy']
-val_acc = history_20.history['val_accuracy']
-loss = history_20.history['loss']
-val_loss = history_20.history['val_loss']
+acc = history_30.history['accuracy']
+val_acc = history_30.history['val_accuracy']
+loss = history_30.history['loss']
+val_loss = history_30.history['val_loss']
 epochs_range = range(1, len(acc) + 1)
 
 plt.figure(figsize=(12, 5))
@@ -162,7 +162,7 @@ plt.figure(figsize=(12, 5))
 plt.subplot(1, 2, 1)
 plt.plot(epochs_range, acc, label='Training Accuracy', marker='o')
 plt.plot(epochs_range, val_acc, label='Validation Accuracy', marker='o')
-plt.title('Training and Validation Accuracy (20 Epochs)')
+plt.title('Training and Validation Accuracy (30 Epochs)')
 plt.xlabel('Epoch')
 plt.ylabel('Accuracy')
 plt.legend()
@@ -171,7 +171,7 @@ plt.legend()
 plt.subplot(1, 2, 2)
 plt.plot(epochs_range, loss, label='Training Loss', marker='o')
 plt.plot(epochs_range, val_loss, label='Validation Loss', marker='o')
-plt.title('Training and Validation Loss (20 Epochs)')
+plt.title('Training and Validation Loss (30 Epochs)')
 plt.xlabel('Epoch')
 plt.ylabel('Loss')
 plt.legend()
@@ -179,7 +179,7 @@ plt.legend()
 plt.tight_layout()
 
 # Save the training curves figure
-training_curves_path = "training_validation_curves_20epochs.png"
+training_curves_path = "training_validation_curves_30epochs.png"
 plt.savefig(training_curves_path)
 print(f"Training curves figure saved to {training_curves_path}.")
 
@@ -217,7 +217,7 @@ plt.xlabel('Predicted')
 plt.ylabel('True')
 
 # Save the confusion matrix figure
-cm_fig_path = "confusion_matrix_18epochs.png"
+cm_fig_path = "confusion_matrix_14epochs.png"
 plt.savefig(cm_fig_path)
 print(f"Confusion matrix saved to {cm_fig_path}.")
 
