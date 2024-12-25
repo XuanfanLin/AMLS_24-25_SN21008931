@@ -47,4 +47,23 @@ Both datasets can be downloaded from [MedMNIST](https://medmnist.com/).
 ### 2. Set Up Environment
 Install Python 3.11.6 and the required libraries. Use the following commands to set up the environment:
 ```bash
-pip install numpy==1.26.2 scikit-learn==1.3.2 tensorflow==2.15.0 seaborn==0.13.0 matplotlib==3.8.2 medmnist==2.0.0 keras-tuner==1.4.4
+pip install numpy==1.26.2 scikit-learn==1.3.2 tensorflow==2.15.0 seaborn==0.13.0 matplotlib==3.8.
+2 medmnist==2.0.0 keras-tuner==1.4.4
+```
+
+### 3. Run the Project
+
+Run the `main.py` script to execute both tasks:
+```bash
+python main.py
+```
+
+By default:
+- **Task A**: Evaluates Random Forest and SVM with hyperparameter tuning and visualization of results.
+- **Task B**: Evaluates the CNN model with hyperparameter tuning for 9 epochs initially, followed by 30 epochs to see the learning curves and finally choose 14 for final training.
+
+---
+
+## 4. View Results
+- During execution, visualizations such as accuracy curves and confusion matrices will be displayed as well as the text output for validation accuracy and test accuracy. Close these visualizations to allow the script to continue.
+- All results will be saved in their respective folders (`A/` or `B/`).
