@@ -154,11 +154,10 @@ def run_random_forest():
 
     # Adjust layout and save the figure
     plt.tight_layout()
-    plt.savefig("A/random_forest_accuracy_vs_n_estimators.png")
-
+    plt.savefig("random_forest_accuracy_vs_n_estimators.png")
 
     # Show the plot
-    plt.show()
+    plt.show(block=False)
 
     # --------------------------------------------------
     # 6. Select the best model and evaluate on the test set

@@ -115,7 +115,7 @@ def run_cnn():
         objective='val_accuracy',
         max_trials=20,  # Number of different hyperparameter configurations to try
         executions_per_trial=1,
-        directory='B/hyperparam_tuning_3',
+        directory='hyperparam_tuning_3',
         project_name='bloodmnist_tuning_dropout'
     )
 
@@ -179,12 +179,12 @@ def run_cnn():
     plt.tight_layout()
 
     # Save the training curves figure
-    training_curves_path = "B/training_validation_curves_30epochs.png"
+    training_curves_path = "training_validation_curves_30epochs.png"
     plt.savefig(training_curves_path)
     print(f"Training curves figure saved to {training_curves_path}.")
 
     # Display the training curves
-    plt.show()
+    plt.show(block=False)
 
     # --------------------------------------------------
     # 6. Retrain the model for 14 epochs based on observations
@@ -217,10 +217,10 @@ def run_cnn():
     plt.ylabel('True')
 
     # Save the confusion matrix figure
-    cm_fig_path = "B/confusion_matrix_14epochs.png"
+    cm_fig_path = "confusion_matrix_14epochs.png"
     plt.savefig(cm_fig_path)
     print(f"Confusion matrix saved to {cm_fig_path}.")
 
     # Display the confusion matrix
-    plt.show()
+    plt.show(block=False)
     print("CNN completed. Results saved to `B/` folder.")
